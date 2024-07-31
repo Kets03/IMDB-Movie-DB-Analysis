@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Developed by Ketaki Narkhede</h1>
+        <P>SYMCA-B  1132230556</P>
+        <div class="card mb-4">
+            <div class="card-header">
+                IMDB Movie Dataset Analysis
+            </div>
+            <div class="card-body">
+                <p><strong>Average Runtime:</strong> {{ analysis.avg_runtime }}</p>
+                <p><strong>Average Rating:</strong> {{ analysis.avg_rating }}</p>
+                <p><strong>Average Votes:</strong> {{ analysis.avg_votes }}</p>
+                <p><strong>Average Revenue:</strong> {{ analysis.avg_revenue }}</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                Yearly Revenue
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for year, revenue in analysis.revenue_per_year.items %}
+                    <li class="list-group-item">{{ year }}: {{ revenue }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
